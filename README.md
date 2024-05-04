@@ -119,7 +119,7 @@ The `Printer` class encapsulates functionality to control and manage printing ac
 
 #### `setPrinterTextSpecial(value:boolean): void` **EXPERIMENTAL**
 
-- **Description**: The text rendered of this print instance is going to be printed as unicode
+- **Description**: The text rendered of this print instance is going to be printed as unifont
 - **Parameters**:
   - `value` : a boolean to enable or disable TextSpecial
 - **Usage**:
