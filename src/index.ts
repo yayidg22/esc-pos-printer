@@ -56,11 +56,16 @@ class Printer {
    * @param {string} imageBase64 - The `imageBase64` parameter in the `printBase64Image` function is a
    * string that represents an image encoded in Base64 format. This string contains the image data in a
    * format that can be easily transmitted and displayed.
+   * @param {PrinterImagesModes} imageMode the imageMode (size)
    */
-  public printBase64Image(imageBase64: string): void {
+  public printBase64Image(
+    imageBase64: string,
+    imageMode?: PrinterImagesModes
+  ): void {
     this.results.push({
       type: PrinterActionsTypes.printBase64Image,
       payload: imageBase64,
+      extraData: imageMode ?? PrinterImagesModes.IMG_DEFAULT,
     });
   }
 

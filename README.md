@@ -6,6 +6,10 @@
 
 ### Installation
 
+![npm](https://img.shields.io/npm/v/esc-pos-printer)
+![npm](https://img.shields.io/npm/dt/esc-pos-printer)
+![npm](https://img.shields.io/npm/l/esc-pos-printer)
+
 ```bash
 npm install esc-pos-printer
 # or
@@ -147,11 +151,12 @@ The `Printer` class encapsulates functionality to control and manage printing ac
   printer.justify(JustifyModes.justifyCenter);
   ```
 
-#### `printBase64Image(imageBase64: string): void`
+#### `printBase64Image(imageBase64: string,imageMode?:PrinterImagesModes ): void`
 
 - **Description**: Prints a Base64-encoded image.
 - **Parameters**:
   - `imageBase64`:A string containing the Base64-encoded image data.
+  - `imageMode (optional)`: the size of render image example: PrinterImagesModes.IMG_DOUBLE_WIDTH
 - **Usage**:
   ```typescript
   printer.printBase64Image("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."); // Example Base64 image
