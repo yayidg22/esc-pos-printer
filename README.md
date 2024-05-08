@@ -18,6 +18,11 @@ yarn add esc-pos-printer
 
 ## Example
 
+#### IMPORTANT 
+If the printer is not configured, the esc-pos printer manager will not be able to detect it
+
+Please see: [HOW TO SET UP PRINTER](https://escpos-printermanager.netlify.app/docs/configurePrinter)
+
 See it live [escpos-printer-example.netlify.app](https://escpos-printer-example.netlify.app/)
 
 [EXAMPLE SOURCE CODE](https://github.com/yayidg22/esc-pos-printer-react-vite/)
