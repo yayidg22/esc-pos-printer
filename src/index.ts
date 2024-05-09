@@ -106,8 +106,8 @@ class Printer {
       type: PrinterActionsTypes.qrCode,
       payload: {
         content: value,
-        size: size,
-        model: model,
+        size: size ?? 3,
+        model: model ?? QrModes.QR_MODEL_2 ,
       },
     });
   }
