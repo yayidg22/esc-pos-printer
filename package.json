@@ -9,7 +9,7 @@
     "url": "git+https://github.com/yayidg22/esc-pos-printer.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "@yayidg22:registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "esc/pos",
