@@ -33,10 +33,10 @@ jobs:
       - name: Build the package
         run: npm run build
 
-      - name: Publish to npm
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+     # - name: Publish to npm
+     #   run: npm publish
+     #   env:
+     #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish to GitHub Packages
         env:
