@@ -43,4 +43,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm config set @yayidg22:registry https://npm.pkg.github.com/
-          npm publish --registry https://npm.pkg.github.com/
+          npm publish --registry=https://npm.pkg.github.com/
