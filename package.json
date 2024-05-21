@@ -1,12 +1,15 @@
 {
   "name": "esc-pos-printer",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/yayidg22/esc-pos-printer"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "esc/pos",

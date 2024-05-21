@@ -1,0 +1,43 @@
+name: esc-pos-printer
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.9.0'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Install dependencies
+        run: npm install
+
+    # - name: Run tests
+    #   run: npm test
+
+    #   I change the version before push 
+    # - name: Updating the package version
+    #   run: npm version patch
+
+      - name: Build the package
+        run: npm run build
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+
+      - name: Publish to GitHub Packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm config set @yayidg22:registry https://npm.pkg.github.com/
+          npm publish --registry https://npm.pkg.github.com/

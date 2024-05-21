@@ -3,19 +3,28 @@ class Printer {
   private printerName: string;
   private textSpecial: boolean;
   private textAsian: boolean;
+  private key?: string;
 
   constructor(
     printerName?: string,
-    config?: { textAsian?: boolean; textSpecial?: boolean }
+    config?: { textAsian?: boolean; textSpecial?: boolean; key?: string }
   ) {
     this.printerName = printerName ?? "";
     this.textSpecial = config?.textSpecial ?? false;
     this.textAsian = config?.textAsian ?? false;
+    this.key = config?.key;
     this.results = [];
   }
 
   public setPrinterName(printerName: string): void {
     this.printerName = printerName;
+  }
+
+  /**
+   *  add the key to remove watermark
+   */
+  public setKey(key: string): void {
+    this.key = key;
   }
 
   /**
@@ -107,7 +116,7 @@ class Printer {
       payload: {
         content: value,
         size: size ?? 3,
-        model: model ?? QrModes.QR_MODEL_2 ,
+        model: model ?? QrModes.QR_MODEL_2,
       },
     });
   }
@@ -151,6 +160,7 @@ class Printer {
       const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify({
+          key: this.key,
           printer: this.printerName,
           payload: this.results,
           textSpecial: this.textSpecial,
